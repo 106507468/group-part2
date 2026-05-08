@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="application form for job openings">
+        <meta name="keywords" content="jobs, apply, form">
+        <meta name="author" content="Dharma Harris, WWW(World Wide Women)">
+        <title>Apply Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            legend{
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.jpg" width="35%" alt="company logo">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="jobs.html">Jobs</a>
+                    <a href="apply.html">Apply</a>
+                    <a href="about.html">About</a>
+                </nav>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search..." />
+                    <button>Search</button>
+                </div>
+            </header>
+        <div id="page">
+            <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php" id="form-container">
+                <fieldset>
+                    <legend>Reference No.</legend>
+                  <p><label for="reference">Job Reference Number</label>
+                  <input type="text" id="reference" name="reference" pattern="[A-Za-z0-9]{5}" maxlength="5" required></p>
+                 </fieldset>
+                 <fieldset>
+                    <legend>About Applicant</legend>
+                    <p><label for="firstname">First name</label>
+                    <input type="text" id="firstname" name="firstname" pattern="[A-Za-z]{1,20}" maxlength="20" required></p>
+                    <p><label for="lastname">Last name</label>
+                    <input type="text" id="lastname" name="lastname" pattern="[A-Za-z]{1,20}" maxlength="20" required></p>
+                    <label for="date">Date of Birth</label>
+                    <input type="text" id="date" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" name="date"><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Gender</legend>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="prefernottosay" name="gender" value="prefernottosay">
+                    <label for="prefernottosay">Prefer not to say</label><br>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Address</legend>
+                    <p><label for="streetaddress">Street Address</label>
+                    <input type="text" id="streetaddress" name="streetaddress" maxlength="40" required></p>
+                    <p><label for="suburb">Suburb/Town</label>
+                    <input type="text" id="suburb" name="suburb" maxlength="40" required>
+                    <label for="state">State</label> 
+			        <select name="state" id="state" required="required">
+				        <option value="">Select</option>
+                        <option value="vic">VIC</option>			
+				        <option value="nsw">NSW</option>
+				        <option value="qld">QLD</option>
+                        <option value="nt">NT</option>
+                        <option value="wa">WA</option>
+                        <option value="sa">SA</option>
+                        <option value="tas">TAS</option>
+                        <option value="act">ACT</option>
+			        </select></p>
+                    <label for="postcode">Postcode</label>
+                    <input type="text" id="postcode" name="postcode" pattern="\d{4}" size="4">
+                </fieldset>
+                <fieldset>
+                    <legend>Contact Info.</legend>
+                    <label for="email">Email</label>                    
+                    <input type="text" name="email" id="email" placeholder="example@email.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}" required>
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" pattern=[0-9]{8,12} required>
+                </fieldset>
+                <!--list of skills genereated by Chat GPT-->
+                <fieldset>
+                <legend>Work Skills</legend>
+                <div id="column1">
+                    <!--communication skills-->
+                    <label for="Communication"><input type="checkbox" id="Communication" name="Communication" value="Communication" >
+                        Communication Skills</label><br>
+                    <!--teamwork-->
+                    <label for="teamwork"><input type="checkbox" id="teamwork" name="teamwork" value="teamwork" >
+                        Teamwork</label><br>
+                    <!--problem solving-->
+                    <label for="problem"><input type="checkbox" id="problem" name="problem" value="problem" >
+                        Problem Solving</label><br>
+                    <!--time management-->
+                    <label for="timemanage"><input type="checkbox" id="timemanage" name="timemanage" value="timemanage" >
+                        Time Management</label><br>
+                    <!--organisation-->
+                    <label for="organisation"><input type="checkbox" id="organisation" name="organisation" value="organisation" >
+                        Organisation</label><br>
+                </div>
+                <div id="column2">
+                    <!--adaptability-->
+                    <label for="adaptability"><input type="checkbox" id="adaptability" name="adaptability" value="adaptability" >
+                        Adaptability</label><br>
+                    <!--detail oriented-->
+                    <label for="detailoriented"><input type="checkbox" id="detailoriented" name="detailoriented" value="detailoriented" >
+                        Detail-Oriented</label><br>
+                    <!--reliability-->
+                    <label for="reliability"><input type="checkbox" id="reliability" name="reliability" value="reliability" >
+                        Reliability</label><br>
+                    <!--customerservice-->
+                    <label for="customerservice"><input type="checkbox" id="customerservice" name="customerservice" value="customerservice" >
+                        Customer Service Skills</label><br>
+                    <!--computerskills-->
+                    <label for="computerskills"><input type="checkbox" id="computerskills" name="computerskills" value="computerskills" >
+                        Basic Computer Skills</label><br>
+                </div><br><br>
+                <label for="otherskills" style="font-weight: bold;">Other Skills</label><br>
+                <textarea id="otherskills" name="otherskills" rows="4" cols="50"></textarea>
+                </fieldset>
+                <input type="submit" value="Submit"/>
+	            <input type="reset" value="Reset Form"/>
+            </form>
+        </div>
+    <footer>
+        <p>&copy; 2026 EcoSolutions. All rights reserved.</p>
+    </footer>
+    </body>
+     
+</html>
