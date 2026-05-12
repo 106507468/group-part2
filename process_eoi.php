@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+$username = "root";
+$password = "";
+$dbname = "eoi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
@@ -26,7 +26,7 @@ $sql = "CREATE TABLE eoi (
     skill2 VARCHAR(100),
 
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
-)"
+)";
 
 if ($conn->query($sql) === TRUE) {
   echo "Table created successfully";
