@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 
 
 
-$creatTableSQL = "CREATE TABLE if not exists eoi (
+$createTableSQL = "CREATE TABLE if not exists eoi (
     EOInumber INT AUTO_INCREMENT PRIMARY KEY,
     job_reference VARCHAR(5),
     first_name VARCHAR(20),
