@@ -11,20 +11,19 @@ if ($conn->connect_error) {
 
 $sql = "CREATE TABLE eoi (
     EOInumber INT AUTO_INCREMENT PRIMARY KEY,
-    job_reference VARCHAR(20),
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
+    job_reference VARCHAR(5),
+    first_name VARCHAR(20),
+    last_name VARCHAR(20),
     dob DATE,
-    gender VARCHAR(10),
-    street_address VARCHAR(100),
-    suburb VARCHAR(50),
-    state VARCHAR(20),
-    postcode VARCHAR(10),
-    email VARCHAR(100),
-    phone VARCHAR(20),
-    skill1 VARCHAR(100),
-    skill2 VARCHAR(100),
-
+    gender VARCHAR(20),
+    street_address VARCHAR(40),
+    suburb VARCHAR(40),
+    state VARCHAR(30),
+    postcode VARCHAR(4),
+    email VARCHAR(50),
+    phone VARCHAR(12),
+    /* skills goes here once i work it out
+    */
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 )";
 

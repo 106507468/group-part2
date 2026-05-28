@@ -28,7 +28,7 @@
                 </div>
             </header>
         <div id="page">
-            <form method="post" action="group-part2/process_eoi.php" id="form-container">
+            <form method="post" action="group-part2/process_eoi.php" id="form-container" novalidate>
                 <fieldset>
                     <legend>Reference No.</legend>
                   <p><label for="reference">Job Reference Number</label>
@@ -122,8 +122,8 @@
                 <label for="otherskills" style="font-weight: bold;">Other Skills</label><br>
                 <textarea id="otherskills" name="otherskills" rows="4" cols="50"></textarea>
                 </fieldset>
-                <input type="submit" value="Submit"/>
-	            <input type="reset" value="Reset Form"/>
+                <input id="button" type="submit" value="Submit"/>
+	            <input id="button" type="reset" value="Reset Form"/>
             </form>
         </div>
     <footer>
