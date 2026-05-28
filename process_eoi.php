@@ -9,11 +9,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-if ($conn->query($sql) === TRUE) {
-  echo "Table created successfully";
-} else {
-  echo "Error creating table: " . $conn->error;
-}
+
 
 $sql = "CREATE TABLE if not exists eoi (
     EOInumber INT AUTO_INCREMENT PRIMARY KEY,
@@ -45,7 +41,7 @@ echo "<table border='1'>
 
   <tr>
     <td>eoi number</td>
-    <td>{$row['eoinumber']}</td>
+    <td>{$row['EOInumber']}</td>
   </tr>
   <tr>
     <td>reference number</td>
@@ -69,7 +65,11 @@ echo "<table border='1'>
   echo "no applications found.";
 }
 
-
+if ($conn->query($sql) === TRUE) {
+  echo "Table created successfully";
+} else {
+  echo "Error creating table: " . $conn->error;
+}
 
 
 $conn->close();
