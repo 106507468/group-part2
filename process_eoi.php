@@ -30,7 +30,7 @@ $creatTableSQL = "CREATE TABLE if not exists eoi (
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 )";
 
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($createTableSQL) === TRUE) {
   echo "Table created successfully";
 } else {
   echo "Error creating table: " . $conn->error;
