@@ -9,7 +9,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "CREATE TABLE eoi (
+$sql = "CREATE TABLE if not exists eoi (
     EOInumber INT AUTO_INCREMENT PRIMARY KEY,
     job_reference VARCHAR(5),
     first_name VARCHAR(20),
