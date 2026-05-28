@@ -17,7 +17,7 @@ $createTableSQL = "CREATE TABLE if not exists eoi (
     job_reference VARCHAR(5),
     first_name VARCHAR(20),
     last_name VARCHAR(20),
-    dob DATE,
+    date DATE,
     gender VARCHAR(20),
     street_address VARCHAR(40),
     suburb VARCHAR(40),
@@ -39,7 +39,7 @@ if ($conn->query($createTableSQL) === TRUE) {
 $job_reference = $_POST['job_reference'];
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
-$dob = $_POST['dob'];
+$date = $_POST['date'];
 $gender = $_POST['gender'];
 $street_address = $_POST['street_address'];
 $suburb = $_POST['suburb'];
@@ -52,7 +52,7 @@ $insertSQL = "INSERT INTO eoi (
   job_reference,
   first_name,
   last_name,
-  dob,
+  date,
   gender,
   street_address,
   suburb,
@@ -67,7 +67,7 @@ VALUES (
     '$job_reference',
     '$first_name',
     '$last_name',
-    '$dob',
+    '$date',
     '$gender',
     '$street_address',
     '$suburb',
@@ -110,7 +110,7 @@ echo "<table border='1'>
   </tr>
   <tr>
     <td>date of birth</td>
-    <td>{$row['dob']}</td>
+    <td>{$row['date']}</td>
   </tr>
 
   </table>";
