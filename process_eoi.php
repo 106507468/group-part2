@@ -60,7 +60,7 @@ $insertSQL = "INSERT INTO eoi (
   postcode,
   email,
   phone
-
+)
 
 VALUES (
 
