@@ -5,13 +5,14 @@ $password = "";
 $dbname = "eoi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
+
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
 
 
-$sql = "CREATE TABLE if not exists eoi (
+$createTableSQL = "CREATE TABLE if not exists eoi (
     EOInumber INT AUTO_INCREMENT PRIMARY KEY,
     job_reference VARCHAR(5),
     first_name VARCHAR(20),
@@ -29,7 +30,59 @@ $sql = "CREATE TABLE if not exists eoi (
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 )";
 
-$conn->query($sql);
+if ($conn->query($createTableSQL) === TRUE) {
+  echo "Table created successfully";
+} else {
+  echo "Error creating table: " . $conn->error;
+}
+
+$job_reference = $_POST['job_reference'];
+$first_name = $_POST['first_name'];
+$last_name = $_POST['last_name'];
+$dob = $_POST['dob'];
+$gender = $_POST['gender'];
+$street_address = $_POST['street_address'];
+$suburb = $_POST['suburb'];
+$state = $_POST['state'];
+$postcode = $_POST['postcode'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+
+$insertSQL = "INSERT INTO eoi (
+  job_reference,
+  first_name,
+  last_name,
+  dob,
+  gender,
+  street_address,
+  suburb,
+  state,
+  postcode,
+  email,
+  phone
+)
+
+VALUES (
+
+    '$job_reference',
+    '$first_name',
+    '$last_name',
+    '$dob',
+    '$gender',
+    '$street_address',
+    '$suburb',
+    '$state',
+    '$postcode',
+    '$email',
+    '$phone'
+
+)";
+
+if ($conn->query($insertSQL) === TRUE) {
+    echo "Application submitted successfully<br>";
+} else {
+    die("Error inserting record: " . $conn->error);
+}
 
 $result = $conn->query("select * from eoi order by eoinumber desc limit 1");
 
@@ -64,13 +117,6 @@ echo "<table border='1'>
 } else {
   echo "no applications found.";
 }
-
-if ($conn->query($sql) === TRUE) {
-  echo "Table created successfully";
-} else {
-  echo "Error creating table: " . $conn->error;
-}
-
 
 $conn->close();
 ?>
