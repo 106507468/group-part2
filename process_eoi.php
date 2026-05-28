@@ -12,12 +12,12 @@ if ($conn->connect_error) {
 
 
 
-$createTableSQL = "CREATE TABLE if not exists eoi (
+$creatTableSQL = "CREATE TABLE if not exists eoi (
     EOInumber INT AUTO_INCREMENT PRIMARY KEY,
     job_reference VARCHAR(5),
     first_name VARCHAR(20),
     last_name VARCHAR(20),
-    date DATE,
+    dob DATE,
     gender VARCHAR(20),
     street_address VARCHAR(40),
     suburb VARCHAR(40),
@@ -30,7 +30,7 @@ $createTableSQL = "CREATE TABLE if not exists eoi (
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 )";
 
-if ($conn->query($createTableSQL) === TRUE) {
+if ($conn->query($sql) === TRUE) {
   echo "Table created successfully";
 } else {
   echo "Error creating table: " . $conn->error;
@@ -39,7 +39,7 @@ if ($conn->query($createTableSQL) === TRUE) {
 $job_reference = $_POST['job_reference'];
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
-$date = $_POST['date'];
+$dob = $_POST['dob'];
 $gender = $_POST['gender'];
 $street_address = $_POST['street_address'];
 $suburb = $_POST['suburb'];
@@ -52,7 +52,7 @@ $insertSQL = "INSERT INTO eoi (
   job_reference,
   first_name,
   last_name,
-  date,
+  dob,
   gender,
   street_address,
   suburb,
@@ -60,14 +60,14 @@ $insertSQL = "INSERT INTO eoi (
   postcode,
   email,
   phone
-)
+
 
 VALUES (
 
     '$job_reference',
     '$first_name',
     '$last_name',
-    '$date',
+    '$dob',
     '$gender',
     '$street_address',
     '$suburb',
@@ -82,7 +82,7 @@ if ($conn->query($insertSQL) === TRUE) {
     echo "Application submitted successfully<br>";
 } else {
     die("Error inserting record: " . $conn->error);
-}
+};
 
 $result = $conn->query("select * from eoi order by eoinumber desc limit 1");
 
@@ -110,7 +110,7 @@ echo "<table border='1'>
   </tr>
   <tr>
     <td>date of birth</td>
-    <td>{$row['date']}</td>
+    <td>{$row['dob']}</td>
   </tr>
 
   </table>";
