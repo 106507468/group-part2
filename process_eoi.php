@@ -27,6 +27,42 @@ $sql = "CREATE TABLE if not exists eoi (
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 )";
 
+  echo "
+  <table>
+  <tr>
+    <th>Questionr</th>
+    <th>Response</th>
+  </tr>
+
+  <tr>
+    <td>EOI Number</td>
+    <td>$EOInumber</td>
+  </tr>
+  
+  <tr>
+    <td>Reference number</td>
+    <td>$job_reference</td>
+  </tr>
+
+  <tr>
+    <td>First name</td>
+    <td>$first_name</td>
+  </tr>
+
+  <tr>
+    <td>Last name</td>
+    <td>$last_name</td>
+  </tr>
+
+  <tr>
+    <td>Date of Birth</td>
+    <td>$dob</td>
+  </tr>
+
+  
+  </table>
+  ";
+
 if ($conn->query($sql) === TRUE) {
   echo "Table created successfully";
 } else {
