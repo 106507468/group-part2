@@ -9,6 +9,12 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+if ($conn->query($sql) === TRUE) {
+  echo "Table created successfully";
+} else {
+  echo "Error creating table: " . $conn->error;
+}
+
 $sql = "CREATE TABLE if not exists eoi (
     EOInumber INT AUTO_INCREMENT PRIMARY KEY,
     job_reference VARCHAR(5),
@@ -27,47 +33,44 @@ $sql = "CREATE TABLE if not exists eoi (
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 )";
 
-  echo "
-  <table>
-  <tr>
-    <th>Questionr</th>
-    <th>Response</th>
-  </tr>
+$conn->query($sql);
+
+$result = $conn->query("select * from eoi order by eoinumber desc limit 1");
+
+if ($result->num_rows > 0) {
+  $row = $result->fetch_assoc();
+
+echo "<table border='1'>
+  <tr><th>question</th><th>response</th></tr>
 
   <tr>
-    <td>EOI Number</td>
-    <td>$EOInumber</td>
+    <td>eoi number</td>
+    <td>{$row['eoinumber']}</td>
   </tr>
-  
   <tr>
-    <td>Reference number</td>
-    <td>$job_reference</td>
+    <td>reference number</td>
+    <td>{$row['job_reference']}</td>
   </tr>
-
   <tr>
-    <td>First name</td>
-    <td>$first_name</td>
+    <td>first name</td>
+    <td>{$row['first_name']}</td>
   </tr>
-
   <tr>
-    <td>Last name</td>
-    <td>$last_name</td>
+    <td>last name</td>
+    <td>{$row['last_name']}</td>
   </tr>
-
   <tr>
-    <td>Date of Birth</td>
-    <td>$dob</td>
+    <td>date of birth</td>
+    <td>{$row['dob']}</td>
   </tr>
 
-  
-  </table>
-  ";
-
-if ($conn->query($sql) === TRUE) {
-  echo "Table created successfully";
+  </table>";
 } else {
-  echo "Error creating table: " . $conn->error;
+  echo "no applications found.";
 }
+
+
+
 
 $conn->close();
 ?>
