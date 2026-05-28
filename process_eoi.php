@@ -24,7 +24,7 @@ $createTableSQL = "CREATE TABLE if not exists eoi (
     job_reference VARCHAR(5),
     first_name VARCHAR(20),
     last_name VARCHAR(20),
-    dob VARCHAR(10),
+    dob DATE,
     gender VARCHAR(20),
     street_address VARCHAR(40),
     suburb VARCHAR(40),
@@ -49,17 +49,10 @@ $createTableSQL = "CREATE TABLE if not exists eoi (
     status ENUM('New', 'Current', 'Final') DEFAULT 'New'
 )";
 
-$conn->query($createTableSQL);
 if (!$conn->query($createTableSQL)) {
     die("Table creation failed: " . $conn->error);
 }
 
-function sanitise($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
 
 $errors = [];
 
@@ -104,11 +97,18 @@ if (!empty($errors)) {
   exit();
 }
 
+function sanitise($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 //Sanitising Data
 $reference = sanitise($_POST['reference']);
 $firstname = sanitise($_POST['firstname']);
 $lastname = sanitise($_POST['lastname']);
-$dob = sanitise($_POST['dob']);
+$dob = date("Y-m-d", strtotime(str_replace('/', '-', $_POST['dob'])));
 $gender = sanitise($_POST['gender']);
 $streetaddress = sanitise($_POST['streetaddress']);
 $suburb = sanitise($_POST['suburb']);
@@ -121,7 +121,7 @@ $otherskills = sanitise($_POST['otherskills']);
 
 
 //Translating Skills Data
-$communication = isset($_POST['Communication']) ? "Yes" : "No";
+$communication = isset($_POST['communication']) ? "Yes" : "No";
 $teamwork = isset($_POST['teamwork']) ? "Yes" : "No";
 $problem = isset($_POST['problem']) ? "Yes" : "No";
 $timemanage = isset($_POST['timemanage']) ? "Yes" : "No";
@@ -156,7 +156,7 @@ if ($conn->query($sql) === TRUE) {
     echo "<h2>Application Submitted Successfully</h2>";
     echo "<p>Your EOI Number is: <strong>$id</strong></p>";
 } else {
-  echo "SQL Error: " . $conn->error;
+  die ("SQL Error: " . $conn->error);
 }
 
 $conn->close();
