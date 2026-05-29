@@ -56,32 +56,22 @@ if (!$conn->query($createTableSQL)) {
 
 $errors = [];
 
-// Job reference (5 chars alphanumeric)
+
 if (!preg_match("/^[A-Za-z0-9]{5}$/", $_POST['reference'])) {
     $errors[] = "Invalid job reference";
 }
-
-// First name
 if (!preg_match("/^[A-Za-z]{1,20}$/", $_POST['firstname'])) {
     $errors[] = "Invalid first name";
 }
-
-// Last name
 if (!preg_match("/^[A-Za-z]{1,20}$/", $_POST['lastname'])) {
     $errors[] = "Invalid last name";
 }
-
-// Postcode
 if (!preg_match("/^\d{4}$/", $_POST['postcode'])) {
     $errors[] = "Invalid postcode";
 }
-
-// Email
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
     $errors[] = "Invalid email";
 }
-
-// Phone
 if (!preg_match("/^[0-9]{8,12}$/", $_POST['phone'])) {
     $errors[] = "Invalid phone number";
 }
@@ -104,7 +94,6 @@ function sanitise($data) {
     return $data;
 }
 
-//Sanitising Data
 $reference = sanitise($_POST['reference']);
 $firstname = sanitise($_POST['firstname']);
 $lastname = sanitise($_POST['lastname']);
@@ -119,8 +108,6 @@ $phone = sanitise($_POST['phone']);
 $otherskills = sanitise($_POST['otherskills']);
 
 
-
-//Translating Skills Data
 $communication = isset($_POST['communication']) ? "Yes" : "No";
 $teamwork = isset($_POST['teamwork']) ? "Yes" : "No";
 $problem = isset($_POST['problem']) ? "Yes" : "No";
