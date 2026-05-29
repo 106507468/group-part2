@@ -11,7 +11,7 @@ if (!isset($_POST['reference'], $_POST['firstname'], $_POST['lastname'], $_POST[
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "ecosolutions";
+$dbname = "eoi";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
