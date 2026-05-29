@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="homepage for Ecosolutions website">
+    <meta name="keywords" content="home, ecosolutions, environmental, pricing">
+    <meta name="author" content="WWW(WorldWideWomen)">
     <title>Homepage</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -58,7 +58,7 @@
             <tr>
                 <td class="tdin">Electric Vehicle Charger</td>
                 <td class="tdin">Fast home EV charging station</td>
-                <td class="tdin">$950</td>
+                <td class="tdin" rowspan="2">$950</td>
             </tr>
             <tr>
                 <td class="tdin">LED Lighting Pack</td>
