@@ -28,20 +28,20 @@
                 </div>
             </header>
         <div id="page">
-            <form method="post" action="process_eoi.php" id="form-container" novalidate>
+            <form method="POST" action="process_eoi.php" id="form-container" novalidate>
                 <fieldset>
                     <legend>Reference No.</legend>
                   <p><label for="reference">Job Reference Number</label>
-                  <input type="text" id="reference" name="reference" pattern="[A-Za-z0-9]{5}" maxlength="5" required></p>
+                  <input type="text" id="reference" name="reference" required></p>
                  </fieldset>
                  <fieldset>
                     <legend>About Applicant</legend>
                     <p><label for="firstname">First name</label>
-                    <input type="text" id="firstname" name="firstname" pattern="[A-Za-z]{1,20}" maxlength="20" required></p>
+                    <input type="text" id="firstname" name="firstname"  required></p>
                     <p><label for="lastname">Last name</label>
-                    <input type="text" id="lastname" name="lastname" pattern="[A-Za-z]{1,20}" maxlength="20" required></p>
+                    <input type="text" id="lastname" name="lastname" required></p>
                     <label for="date">Date of Birth</label>
-                    <input type="text" id="dob" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" name="dob"><br>
+                    <input type="text" id="dob" placeholder="dd/mm/yyyy" name="dob"><br>
                 </fieldset>
                 <fieldset>
                     <legend>Gender</legend>
@@ -57,9 +57,9 @@
                 <fieldset>
                     <legend>Address</legend>
                     <p><label for="streetaddress">Street Address</label>
-                    <input type="text" id="streetaddress" name="streetaddress" maxlength="40" required></p>
+                    <input type="text" id="streetaddress" name="streetaddress" required></p>
                     <p><label for="suburb">Suburb/Town</label>
-                    <input type="text" id="suburb" name="suburb" maxlength="40" required>
+                    <input type="text" id="suburb" name="suburb"  required>
                     <label for="state">State</label> 
 			        <select name="state" id="state" required="required">
 				        <option value="">Select</option>
