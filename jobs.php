@@ -19,20 +19,8 @@
     
 
     <body>
-        <header>
-                <img src="images/logo.jpg" width="35%" alt="company logo">
-                    <nav>
-                        <a href="index.html">Home</a>
-                        <a href="jobs.html">Jobs</a>
-                        <a href="apply.html">Apply</a>
-                        <a href="about.html">About</a>
-                    </nav>
-                    <div class="search-bar">
-                    <input type="text" placeholder="Search..." />
-                    <button>Search</button>
-                </div>
-        </header>
-        
+    
+    <?php include 'header.inc'; ?>
        
     <main>  
         <h1>Ecosolutions Careers</h1>
@@ -117,9 +105,7 @@
              </section>
     </main> 
 
-    <footer>
-        <p>&copy; 2026 EcoSolutions. All rights reserved.</p>
-    </footer>
+    <?php include 'footer.inc'; ?>
 
     </body>
 </html>
