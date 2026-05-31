@@ -34,7 +34,7 @@
             <form action="jobs.php" method="get">
                 <div class="search-bar">
                     <input type="text" name="search"
-                        placeholder="Search by title, reference or salary..."
+                        placeholder="Search by title or reference..."
                         value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
                     <button type="submit">Search</button>
                 </div>
