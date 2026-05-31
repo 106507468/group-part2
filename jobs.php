@@ -31,6 +31,16 @@
                     through innovative renewable energy technologies. 
                 </em></p>
             </aside>
+             <form action="jobs.php" method="get">
+                <div class="search-bar">
+                    <input type="text" name="search"
+                        placeholder="Search by title, reference or salary..."
+                        value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+
+           
 
             <!--Job Description 1-->
             <section class="Job1"> 
