@@ -11,6 +11,6 @@
         <button>Search</button>
     </div>
     <div class="login"> 
-    <a href="login.php" class="login-btn"> <button type="button">Login</button> </a>
+        <a href="login.php"> <button type="button">Login</button> </a>
     </div>
 </header>
