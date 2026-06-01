@@ -142,7 +142,7 @@ if ($conn->query($sql) === TRUE) {
 
     echo "<h2>Application Submitted Successfully</h2>";
     echo "<p>Your EOI Number is: <strong>$id</strong></p>";
-    echo "<p>Press <a href="index.php">here</a> to return</p>";
+    echo "<p>Press <a href='index.php'>here</a> to return</p>";
 } else {
   die ("SQL Error: " . $conn->error);
 }
