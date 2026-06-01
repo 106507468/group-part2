@@ -15,6 +15,7 @@
     </head>
     <body>
         <?php include 'header.inc'; ?>
+        <h1>Job Application Form</h1>
         <div id="page">
             <form method="POST" action="process_eoi.php" id="form-container" novalidate>
                 <fieldset>
