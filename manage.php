@@ -1,3 +1,22 @@
+    <?php
+        session_start();
+       // Redirect to login if not logged in
+        if (!isset($_SESSION['username'])) {
+            header("Location: login.php");
+            exit();
+        }
+        
+        // Logout
+        if (isset($_GET['logout'])) {
+            session_unset();
+            session_destroy();
+            header("Location: login.php");
+            exit();
+        }
+        
+        require_once('settings.php');
+    ?>    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,24 +27,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <?php include 'header.inc'; ?>
-    <?php
-        session_start();
-        // If not logged in, redirect to login page 
-        if (!isset($_SESSION['username'])) {
-            header("Location: login.php");
-            exit();
-        }
 
-        //logout by destroying session
-        if (isset($_GET['logout'])) {
-        session_unset();
-        session_destroy();
-        header("Location: login.php");
-        exit();
-        }
-    ?>    
+
+
 
 
     <?php include 'footer.inc'; ?>
