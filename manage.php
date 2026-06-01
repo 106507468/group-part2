@@ -30,7 +30,6 @@
     <?php include 'header.inc'; ?>
 <main class="dashboard">
         <h3>HR Manager Dashboard</h3>
-        <a href="manage.php?logout=1"><button type="button" class="logout-btn">Logout</button></a>
     
     <h4>Search EOIs</h4>
     <div class="manage-form">
@@ -68,6 +67,9 @@
                 <button type="submit" class="submit-btn">Delete All EOIs</button>
             </form>
         </div>
+        
+        <a href="manage.php?logout=1"><button type="button" class="logout-btn">Logout</button></a>
+
         <?php
             // Delete all EOIs by job reference 
             if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['action'] == 'delete_by_ref') {
