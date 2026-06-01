@@ -44,6 +44,12 @@
             <option value="status">Status</option>
         </select>
     </form>
+    <!-- Filter by job reference -->
+    <h2>Filter by Job Reference</h2>
+    <form method="get" action="manage.php">
+        <label for="filter_ref">Job Reference</label>
+        <input type="text" id="filter_ref" name="filter_ref" placeholder="e.g. RE439">
+    </form>
  
 
 
