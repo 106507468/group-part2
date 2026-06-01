@@ -105,6 +105,13 @@ form {
     background-color: #0C4F29;
 }
 
+#submit-button, #reset-button {
+    padding: 10px;
+    color: #0C4f29;
+    border: none;
+    border-radius: 5px;
+}
+
 /* Index page CSS */
 /* Parallax scrolling code sourced from W3Schools */
 .parallax {
