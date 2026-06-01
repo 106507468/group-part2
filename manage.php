@@ -1,21 +1,21 @@
-    <?php
-        session_start();
-       // Redirect to login if not logged in
-        if (!isset($_SESSION['username'])) {
-            header("Location: login.php");
-            exit();
-        }
-        
-        // Logout
-        if (isset($_GET['logout'])) {
-            session_unset();
-            session_destroy();
-            header("Location: login.php");
-            exit();
-        }
-        
-        require_once('settings.php');
-    ?>    
+ <?php
+    session_start();
+    // Redirect to login if not logged in
+    if (!isset($_SESSION['username'])) {
+        header("Location: login.php");
+        exit();
+    }
+    
+    // Logout
+    if (isset($_GET['logout'])) {
+        session_unset();
+        session_destroy();
+        header("Location: login.php");
+        exit();
+    }
+    
+    require_once('settings.php');
+?>    
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +28,23 @@
 </head>
 <body>
     <?php include 'header.inc'; ?>
+<main>
+    <h1>HR Manager Dashboard</h1>
+    <a href="manage.php?logout=1">Logout</a>
+ 
+    <!-- List of all EOIs -->
+    <h2>List EOIs</h2>
+    <form method="get" action="manage.php">
+        <label for="sort_by">Sort by</label>
+        <select id="sort_by" name="sort_by">
+            <option value="EOInumber">EOI Number</option>
+            <option value="job_reference">Job Reference</option>
+            <option value="last_name">Last Name</option>
+            <option value="first_name">First Name</option>
+            <option value="status">Status</option>
+        </select>
+    </form>
+ 
 
 
 
