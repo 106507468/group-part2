@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: apply.html");
+    header("Location: apply.php");
     exit();
 }
 
@@ -11,7 +11,7 @@ if (!isset($_POST['reference'], $_POST['firstname'], $_POST['lastname'], $_POST[
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "eoi";
+$dbname = "ecosolutions";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
