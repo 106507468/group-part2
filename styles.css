@@ -527,6 +527,6 @@ caption {
     border: 0;
 }
 
-body{
-    border: 1px red bold;
+body {
+    outline: 20px solid red !important;
 }
