@@ -75,28 +75,31 @@
                 $conn->query($query);
                 echo "<p>EOIs for job reference " . $delRef . " have been deleted.</p>";
             }
-            // Change EOI status
+            // Get the EOI number and new status from the form
             if ($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST['action'] == 'change_status') {
                 $eoiNum    = $_POST['eoi_number'];
                 $newStatus = $conn->real_escape_string($_POST['new_status']);
+             // Update the status in the database for the matching EOI
                 $query     = "UPDATE eoi SET status = '$newStatus' WHERE EOInumber = '$eoiNum'";
                 $conn->query($query);
                 echo "<p>EOI #$eoiNum status updated to $newStatus.</p>";
             }
-
+            // Set the default sort column to EOInumber
             $sortBy = 'EOInumber';
             $allowedSort = ['EOInumber', 'job_reference', 'first_name', 'last_name', 'status'];
             if (isset($_GET['sort_by']) && in_array($_GET['sort_by'], $allowedSort)) {
                 $sortBy = $_GET['sort_by'];
             }
-
+            // No filter by default it will show all EOIs
             $where = "";
-
+            
+            // If searched by job reference, filter by reference number
             if (!empty($_GET['filter_ref'])) {
                 $ref   = $conn->real_escape_string($_GET['filter_ref']);
                 $where = "WHERE job_reference = '$ref'";
             }
 
+            // If searched by name, check both first and last name columns
             if (!empty($_GET['filter_name'])) {
                 $name  = $conn->real_escape_string($_GET['filter_name']);
                 $where = "WHERE first_name LIKE '%$name%' OR last_name LIKE '%$name%'";
