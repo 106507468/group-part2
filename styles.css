@@ -48,17 +48,18 @@ form {
 }
 
 .login button {
-    padding: 10px 15px;
-    border: 1px solid #2e7d32;
-    background-color: #2e7d32;
-    color: white;
-    border-radius: 0 20px 20px 0;
-    cursor: pointer;
+  padding: 10px 15px;
+  border: 1px solid #2e7d32;
+  background-color: #2e7d32;
+  color: white;
+  border-radius: 20px 20px 20px 20px;
+  cursor: pointer;
 }
 
 .login button:hover {
-    background-color: #1b5e20;
+  background-color: #1b5e20;
 }
+
 
 #page {
     display: flex;
@@ -377,7 +378,101 @@ caption {
     font-size: 18px;
     line-height: 1.6;
 }
+/* Login Page */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
 
+.login-box {
+    background-color: white;
+    border: 3px solid #1F7815;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+}
+
+.login-box h3 {
+    text-align: center;
+    color: #0C4F29;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.login-form label {
+    color: #0C4F29;
+    font-weight: bold;
+    font-family: verdana, sans-serif;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #82A71D;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    padding: 10px;
+    background-color: #1F7815;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: verdana, sans-serif;
+}
+
+.login-form button:hover {
+    background-color: #0C4F29;
+}
+/* Manage Page */
+.manage-form {
+    border: 3px solid #1F7815;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    margin: 20px auto;
+    background-color: white;
+    display: block;
+}
+
+.dashboard {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+.logout-btn, .search-btn, .submit-btn {
+    padding: 10px 15px;
+    background-color: #1F7815;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover, .search-btn:hover, .submit-btn:hover {
+    background-color: #0C4F29;
+}
+.manage-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.manage-form input, .manage-form select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
 /* Media query to fit smaller screens and have responsive layout */
 @media screen and (max-width: 768px) {
     aside {
