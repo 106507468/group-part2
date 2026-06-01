@@ -36,7 +36,8 @@
 </head>
 <body>
 <?php include 'header.inc'; ?>
-
+<div class="login-page">
+   <div class="login-box">
    <h3>Manager Login</h3>
     <form action="login.php" method="post">
 
@@ -51,8 +52,10 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
         </p>
-        <input type="submit" value="Login">
+        <button type="submit">Login</button>
     </form>
+    </div>
+</div>
 
 
 <?php include 'footer.inc'; ?>
