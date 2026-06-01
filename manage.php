@@ -30,10 +30,10 @@
     <?php include 'header.inc'; ?>
 <main>
         <h3>HR Manager Dashboard</h3>
-        <a href="manage.php?logout=1">Logout</a>
+        <a href="manage.php?logout=1"><button type="button" class="logout-btn">Logout</button></a>
     
     <h2>Search EOIs</h2>
-    <div class="form-pref">
+    <div class="manage-form">
         <form method="get" action="manage.php">
     
             <label for="filter_ref">Job Reference</label>
@@ -53,19 +53,19 @@
                 <option value="last_name"<?php echo (isset($_GET['sort_by']) && $_GET['sort_by'] == 'last_name')?'selected':''; ?>>Last Name</option> 
                 <option value="status"<?php echo(isset($_GET['sort_by']) && $_GET['sort_by'] == 'status')?'selected':''; ?>>Status</option>
             </select>    
-            <button type="submit" name="list_all" value="1">Search</button>
+            <button type="submit" name="list_all" value="1" class="search-btn">Search</button>
         </form>
     </div>
 
         <!-- Delete EOIs by job reference -->
         <h2>Delete EOIs by Job Reference</h2>
         <p>Warning: This will permanently delete all EOIs for the entered job reference.</p>
-        <div class="form-del">
+        <div class="manage-form">
             <form method="post" action="manage.php">
                 <input type="hidden" name="action" value="delete_by_ref">
                 <label for="delete_ref">Job Reference</label>
                 <input type="text" id="delete_ref" name="delete_ref" placeholder="e.g. RE439" required>
-                <button type="submit">Delete All EOIs</button>
+                <button type="submit" class="submit-btn">Delete All EOIs</button>
             </form>
         </div>
         <?php
