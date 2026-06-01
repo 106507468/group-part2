@@ -10,4 +10,9 @@
         <input type="text" placeholder="Search..."/>
         <button>Search</button>
     </div>
+    <div class="login">
+    <input type="text" />
+    <button>Login</button> 
+    </div>
+
 </header>
