@@ -39,7 +39,7 @@
 <div class="login-page">
    <div class="login-box">
    <h3>Manager Login</h3>
-    <form action="login.php" method="post">
+    <form action="login.php" method="post" class="login-form">
 
         <?php if ($loginError !== ""): ?>
             <p class="error-msg"><?php echo htmlspecialchars($loginError); ?></p>
