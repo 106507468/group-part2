@@ -29,11 +29,11 @@
 <body>
     <?php include 'header.inc'; ?>
 <main>
-    <h1>HR Manager Dashboard</h1>
+    <h2>HR Manager Dashboard</h2>
     <a href="manage.php?logout=1">Logout</a>
  
     <!-- List of all EOIs -->
-    <h2>List EOIs</h2>
+    <h3>List EOIs</h3>
     <form method="get" action="manage.php">
         <label for="sort_by">Sort by</label>
         <select id="sort_by" name="sort_by">
