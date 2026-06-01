@@ -35,7 +35,7 @@
     <!-- List of all EOIs -->
     <h3>List EOIs</h3>
     <form method="get" action="manage.php" onsubmit="return confirm('Delete ALL EOIs for this job reference? This cannot be undone.');">
-        <p for="sort_by">Sort by</p>
+        <h5 for="sort_by">Sort by</h5>
         <select id="sort_by" name="sort_by">
             <option value="EOInumber">EOI Number</option>
             <option value="job_reference">Job Reference</option>
@@ -46,20 +46,20 @@
      <!-- Filter by job reference -->
         <h3>Filter by Job Reference</h3>
         
-            <label for="filter_ref">Job Reference</label>
+            <h5 for="filter_ref">Job Reference</h5>
             <input type="text" id="filter_ref" name="filter_ref" placeholder="e.g. RE439">
    
     <!-- Filter by applicant name -->
         <h3>Filter by Applicant Name</h3>
 
-            <label for="filter_name">First name, last name, or both</label>
+            <h5 for="filter_name">First name, last name, or both</h5>
             <input type="text" id="filter_name" name="filter_name" placeholder="e.g. Jane Smith">
         
     <!-- Delete EOIs by job reference -->
         <h3>Delete EOIs by Job Reference</h3>
         
             <input type="hidden" name="action" value="delete_ref_no">
-            <label for="delete_ref">Job Reference</label>
+            <h5 for="delete_ref">Job Reference</h5>
             <input type="text" id="delete_ref" name="delete_ref" placeholder="e.g. RE439" required>
     </form>
  
