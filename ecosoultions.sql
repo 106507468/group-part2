@@ -102,3 +102,93 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 01, 2026 at 11:13 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `ecosolutions`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about`
+--
+
+CREATE TABLE `about` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `student_id` varchar(20) NOT NULL,
+  `pages_worked_on` varchar(255) NOT NULL,
+  `contribution` text NOT NULL,
+  `quote` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `about`
+--
+
+INSERT INTO `about` (`id`, `name`, `student_id`, `pages_worked_on`, `contribution`, `quote`) VALUES
+(1, 'Dharma', '106507468', 'index.html (shared) and apply.html', 'Built the home page layout and the job application form including all fields and validation.', 'Per aspra ad astra (Through hardship to the stars)'),
+(2, 'Mehak', '106396417', 'about.html, index.html, and the shared navigation menu', 'Created the about page, contributed to the home page, and built the shared navigation used across all pages.', 'Every human has a gem hidden within, but the fog of doubt weakens it.'),
+(3, 'Sreetoma', '106601739', 'Index.html and footer across the pages', 'Worked on the home page content and implemented the consistent footer used across all pages.', 'If no one responds to your call, then go your own way alone.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eoi`
+--
+
+CREATE TABLE `eoi` (
+  `EOInumber` int(11) NOT NULL,
+  `job_reference` varchar(5) DEFAULT NULL,
+  `first_name` varchar(20) DEFAULT NULL,
+  `last_name` varchar(20) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `gender` varchar(20) DEFAULT NULL,
+  `street_address` varchar(40) DEFAULT NULL,
+  `suburb` varchar(40) DEFAULT NULL,
+  `state` varchar(30) DEFAULT NULL,
+  `postcode` varchar(4) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` varchar(12) DEFAULT NULL,
+  `communication` varchar(3) DEFAULT NULL,
+  `teamwork` varchar(3) DEFAULT NULL,
+  `problem` varchar(3) DEFAULT NULL,
+  `timemanage` varchar(3) DEFAULT NULL,
+  `organisation` varchar(3) DEFAULT NULL,
+  `adaptability` varchar(3) DEFAULT NULL,
+  `detailoriented` varchar(3) DEFAULT NULL,
+  `reliability` varchar(3) DEFAULT NULL,
+  `customerservice` varchar(3) DEFAULT NULL,
+  `computerskills` varchar(3) DEFAULT NULL,
+  `otherskills` text DEFAULT NULL,
+  `status` enum('New','Current','Final') DEFAULT 'New'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `eoi`
+--
+
+INSERT INTO `eoi` (`EOInumber`, `job_reference`, `first_name`, `last_name`, `dob`, `gender`, `street_address`, `suburb`, `state`, `postcode`, `email`, `phone`, `communication`, `teamwork`, `problem`, `timemanage`, `organisation`, `adaptability`, `detailoriented`, `reliability`, `customerservice`, `computerskills`, `otherskills`, `status`) VALUES
+(1, 'mehak', 'Mehak', 'Kothari', '1970-01-01', '', '26 Dablam street', 'clyde north', 'vic', '3978', 'kotharimehak07@gmail.com', '123456789', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'dehkfj', 'New'),
+(2, 'mehak', 'Mehak', 'Kothari', '1970-01-01', 'female', '26 Dablam street', 'clyde north', 'vic', '3978', 'kotharimehak07@gmail.com', '123456789', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'No', 'dehkfj', 'New');
+
+-- --------------------------------------------------------
