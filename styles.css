@@ -355,7 +355,7 @@ caption {
   font-size: 18px;
   line-height: 1.6;
 }
-/* ── Login Page ── */
+/* Login Page */
 .login-page {
     display: flex;
     justify-content: center;
@@ -441,7 +441,7 @@ caption {
 .manage-form form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     width: 100%;
 }
 
