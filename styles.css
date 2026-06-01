@@ -355,7 +355,7 @@ caption {
   font-size: 18px;
   line-height: 1.6;
 }
-/* Login Page */
+/* ── Login Page ── */
 .login-page {
     display: flex;
     justify-content: center;
@@ -371,6 +371,11 @@ caption {
     width: 300px;
 }
 
+.login-box h3 {
+    text-align: center;
+    color: #0C4F29;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;
@@ -378,7 +383,71 @@ caption {
     width: 100%;
 }
 
-/* Manage Page */
+.login-form label {
+    color: #0C4F29;
+    font-weight: bold;
+    font-family: verdana, sans-serif;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #82A71D;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    padding: 10px;
+    background-color: #1F7815;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: verdana, sans-serif;
+}
+
+.login-form button:hover {
+    background-color: #0C4F29;
+}
+
+/* ── Manage Page ── */
+.manage-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.manage-form label {
+    color: #0C4F29;
+    font-weight: bold;
+    font-family: verdana, sans-serif;
+}
+
+.manage-form input, .manage-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #82A71D;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: verdana, sans-serif;
+}
+
+.manage-form button {
+    padding: 10px;
+    background-color: #1F7815;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: verdana, sans-serif;
+}
+
+.manage-form button:hover {
+    background-color: #0C4F29;
+}
+
 .form-pref, .form-del {
     border: 3px solid #1F7815;
     border-radius: 10px;
@@ -388,17 +457,28 @@ caption {
     background-color: white;
 }
 
-.manage-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
+/* Manage page results table */
+.manage-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: verdana, sans-serif;
 }
 
 .manage-table th {
     background-color: #1F7815;
     color: white;
     padding: 10px;
+    text-align: left;
+}
+
+.manage-table td {
+    padding: 8px;
+    border-bottom: 1px solid #1F7815;
+}
+
+.manage-table tr:hover {
+    background-color: #000000;
 }
 
 /*CSS for login page form and manage page form */ 
