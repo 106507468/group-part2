@@ -35,7 +35,7 @@
     <!-- List of all EOIs -->
     <h3>List EOIs</h3>
     <form method="get" action="manage.php">
-        <label for="sort_by">Sort by</label>
+        <p for="sort_by">Sort by</p>
         <select id="sort_by" name="sort_by">
             <option value="EOInumber">EOI Number</option>
             <option value="job_reference">Job Reference</option>
@@ -45,7 +45,7 @@
         </select>
     </form>
     <!-- Filter by job reference -->
-    <h2>Filter by Job Reference</h2>
+    <h3>Filter by Job Reference</h3>
     <form method="get" action="manage.php">
         <label for="filter_ref">Job Reference</label>
         <input type="text" id="filter_ref" name="filter_ref" placeholder="e.g. RE439">
