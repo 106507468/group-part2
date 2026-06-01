@@ -418,8 +418,17 @@ caption {
     width: 400px;
     margin: 20px auto;
     background-color: white;
+    display: block;
 }
-
+.manage-form + h2, main h3 {
+    text-align: center;
+    color: #1F7815;
+}
+.dashboard {
+  text-align: center;
+  display: block;
+  width: 100%;
+}
 .logout-btn, .search-btn, .submit-btn {
     padding: 10px 15px;
     background-color: #1F7815;
