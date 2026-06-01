@@ -51,7 +51,8 @@
                 <option value="job_reference"<?php echo (isset($_GET['sort_by']) && $_GET['sort_by'] == 'job_reference')?'selected':''; ?>>Job Reference</option> 
                 <option value="first_name"<?php echo (isset($_GET['sort_by']) && $_GET['sort_by'] == 'first_name')?'selected':''; ?>>First Name</option> 
                 <option value="last_name"<?php echo (isset($_GET['sort_by']) && $_GET['sort_by'] == 'last_name')?'selected':''; ?>>Last Name</option> 
-                <option value="status"<?php echo(isset($_GET['sort_by']) && $_GET['sort_by'] == 'status')?'selected':''; ?>>Status</option> 
+                <option value="status"<?php echo(isset($_GET['sort_by']) && $_GET['sort_by'] == 'status')?'selected':''; ?>>Status</option>
+            </select>    
             <button type="submit" name="list_all" value="1">Search</button>
         </form>
     </div>
