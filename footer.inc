@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-content">
         <section class="footer-links">
-            <h3>Project Links</h3>
+            <h2>Project Links</h2>
             <p><a href="https://appliedwebproject-g03.atlassian.net" target="_blank">Jira Project Board</a></p>
             <p><a href="https://github.com/106507468/group-part2" target="_blank">GitHub Repository</a></p>
         </section>
