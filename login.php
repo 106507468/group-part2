@@ -1,3 +1,30 @@
+<?php
+    session_start();
+    
+    require_once('settings.php');
+    
+    $loginError = "";
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+    $username = $conn->real_escape_string(trim($_POST['username']));
+    $password = $conn->real_escape_string(trim($_POST['password']));
+
+
+    $query  = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+    $result = $conn->query($query);
+    $user   = $result->fetch_assoc();
+    
+    if ($user) {
+        $_SESSION['username'] = $user['username'];
+        header("Location: manage.php");
+        exit();
+    } else {
+        $loginError = "Incorrect username or password.";
+    }
+
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,32 +36,13 @@
 </head>
 <body>
 <?php include 'header.inc'; ?>
-<?php
-    session_start();
 
-    require_once('settings.php');
-
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-
-        // Check if username and password match a record in the users table 
-        $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-        $result = $conn->query($query);
-        $user = $result->fetch_assoc();
-
-        if ($user) {
-            // Store username in session and redirect to manage page 
-            header("Location: manage.php");
-            exit();
-        } else {
-            echo "<p>Incorrect username or password.</p>";
-        }
-    }
-?>
-   <h1>Manager Login</h1>
+   <h3>Manager Login</h3>
     <form action="login.php" method="post">
+
+        <?php if ($loginError !== ""): ?>
+            <p class="error-msg"><?php echo htmlspecialchars($loginError); ?></p>
+        <?php endif; ?> 
         <p>
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
