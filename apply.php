@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,13 +8,13 @@
         <title>Apply Page</title>
         <link rel="stylesheet" href="styles.css">
         <style>
-            legend{
+            legend {
                 font-weight: bold;
             }
         </style>
     </head>
-    <?php include 'header.inc'; ?>
     <body>
+        <?php include 'header.inc'; ?>
         <div id="page">
             <form method="POST" action="process_eoi.php" id="form-container" novalidate>
                 <fieldset>
@@ -29,7 +28,7 @@
                     <input type="text" id="firstname" name="firstname" required></p>
                     <p><label for="lastname">Last name</label>
                     <input type="text" id="lastname" name="lastname" required></p>
-                    <label for="date">Date of Birth</label>
+                    <label for="dob">Date of Birth</label>
                     <input type="text" id="dob" placeholder="dd/mm/yyyy" name="dob"><br>
                 </fieldset>
                 <fieldset>
@@ -73,25 +72,27 @@
                 </fieldset>
                 <fieldset>
                     <legend>Work Skills</legend>
-                    <div id="column1">
-                        <label for="Communication"><input type="checkbox" id="Communication" name="Communication" value="Communication">Communication Skills</label><br>
-                        <label for="teamwork"><input type="checkbox" id="teamwork" name="teamwork" value="teamwork">Teamwork</label><br>
-                        <label for="problem"><input type="checkbox" id="problem" name="problem" value="problem">Problem Solving</label><br>
-                        <label for="timemanage"><input type="checkbox" id="timemanage" name="timemanage" value="timemanage">Time Management</label><br>
-                        <label for="organisation"><input type="checkbox" id="organisation" name="organisation" value="organisation">Organisation</label><br>
-                    </div>
-                    <div id="column2">
-                        <label for="adaptability"><input type="checkbox" id="adaptability" name="adaptability" value="adaptability">Adaptability</label><br>
-                        <label for="detailoriented"><input type="checkbox" id="detailoriented" name="detailoriented" value="detailoriented">Detail-Oriented</label><br>
-                        <label for="reliability"><input type="checkbox" id="reliability" name="reliability" value="reliability">Reliability</label><br>
-                        <label for="customerservice"><input type="checkbox" id="customerservice" name="customerservice" value="customerservice">Customer Service Skills</label><br>
-                        <label for="computerskills"><input type="checkbox" id="computerskills" name="computerskills" value="computerskills">Basic Computer Skills</label><br>
-                    </div><br><br>
+                    <div class="skills-columns">
+                        <div id="column1">
+                            <label for="Communication"><input type="checkbox" id="Communication" name="Communication" value="Communication">Communication Skills</label><br>
+                            <label for="teamwork"><input type="checkbox" id="teamwork" name="teamwork" value="teamwork">Teamwork</label><br>
+                            <label for="problem"><input type="checkbox" id="problem" name="problem" value="problem">Problem Solving</label><br>
+                            <label for="timemanage"><input type="checkbox" id="timemanage" name="timemanage" value="timemanage">Time Management</label><br>
+                            <label for="organisation"><input type="checkbox" id="organisation" name="organisation" value="organisation">Organisation</label><br>
+                        </div>
+                        <div id="column2">
+                            <label for="adaptability"><input type="checkbox" id="adaptability" name="adaptability" value="adaptability">Adaptability</label><br>
+                            <label for="detailoriented"><input type="checkbox" id="detailoriented" name="detailoriented" value="detailoriented">Detail-Oriented</label><br>
+                            <label for="reliability"><input type="checkbox" id="reliability" name="reliability" value="reliability">Reliability</label><br>
+                            <label for="customerservice"><input type="checkbox" id="customerservice" name="customerservice" value="customerservice">Customer Service Skills</label><br>
+                            <label for="computerskills"><input type="checkbox" id="computerskills" name="computerskills" value="computerskills">Basic Computer Skills</label><br>
+                        </div>
+                    </div><br>
                     <label for="otherskills" style="font-weight: bold;">Other Skills</label><br>
                     <textarea id="otherskills" name="otherskills" rows="4" cols="50"></textarea>
                 </fieldset>
-                <input id="button" type="submit" value="Submit"/>
-                <input id="button" type="reset" value="Reset Form"/>
+                <input id="submit-button" type="submit" value="Submit"/>
+                <input id="reset-button" type="reset" value="Reset Form"/>
             </form>
         </div>
         <?php include 'footer.inc'; ?>

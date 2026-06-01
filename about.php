@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="description" content="About our team page">
     <meta name="keywords" content="team, about us, ecosolutions">
-    <meta name="author" content="WWW">
+    <meta name="author" content="Dharma Harris, Mehak, Sreetoma Deb Roy, WWW(Worldwide Women)">
     <title>About Us Page</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        h1 { font-size: 25px; }
+        h1 { font-size: 25px; color: #1b5e20; text-align: center; }
     </style>
 </head>
-<body>
+<body class="about-page">
 
 <?php include 'header.inc'; ?>
 <?php include 'settings.php'; ?>
 
-<h1 style="color: green; text-align: center;">About Our Team</h1>
+<h1>About Our Team</h1>
 
 <section>
     <h2>Group Details</h2>
