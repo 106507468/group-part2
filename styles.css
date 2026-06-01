@@ -438,7 +438,18 @@ caption {
 .logout-btn:hover, .search-btn:hover, .submit-btn:hover {
     background-color: #0C4F29;
 }
+.manage-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
 
+.manage-form input, .manage-form select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
 /* Media query to fit smaller screens and have responsive layout */
 @media screen and (max-width: 768px) {
 
