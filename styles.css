@@ -410,7 +410,28 @@ caption {
 .login-form button:hover {
     background-color: #0C4F29;
 }
+/* Manage Page */
+.manage-form {
+    border: 3px solid #1F7815;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    margin: 20px auto;
+    background-color: white;
+}
 
+.logout-btn, .search-btn, .submit-btn {
+    padding: 10px 15px;
+    background-color: #1F7815;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover, .search-btn:hover, .submit-btn:hover {
+    background-color: #0C4F29;
+}
 
 /* Media query to fit smaller screens and have responsive layout */
 @media screen and (max-width: 768px) {
