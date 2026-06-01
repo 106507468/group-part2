@@ -63,7 +63,6 @@
             <tr>
                 <td class="tdin">LED Lighting Pack</td>
                 <td class="tdin">Energy-efficient lighting bundle (10 bulbs)</td>
-                <td class="tdin">$120</td>
             </tr>
         </tbody>
     </table>
