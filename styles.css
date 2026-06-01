@@ -355,6 +355,59 @@ caption {
   font-size: 18px;
   line-height: 1.6;
 }
+/* Login Page */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.login-box {
+    background-color: white;
+    border: 3px solid #1F7815;
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Manage Page */
+.form-pref, .form-del {
+    border: 3px solid #1F7815;
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    margin: 20px auto;
+    background-color: white;
+}
+
+.manage-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.manage-table th {
+    background-color: #1F7815;
+    color: white;
+    padding: 10px;
+}
+
+/*CSS for login page form and manage page form */ 
+.login-form, .manage-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
 
 /* Media query to fit smaller screens and have responsive layout */
 @media screen and (max-width: 768px) {
