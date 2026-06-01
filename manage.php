@@ -50,6 +50,14 @@
         <label for="filter_ref">Job Reference</label>
         <input type="text" id="filter_ref" name="filter_ref" placeholder="e.g. RE439">
     </form>
+
+    <!-- Filter by applicant name -->
+    <h3>Filter by Applicant Name</h3>
+    <form method="get" action="manage.php">
+        <label for="filter_name">First name, last name, or both</label>
+        <input type="text" id="filter_name" name="filter_name" placeholder="e.g. Jane Smith">
+    </form>
+    
  
 
 
