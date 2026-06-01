@@ -47,7 +47,7 @@ form{
   background-color: #1b5e20;
 }
 
-.login button {
+.login-btn {
   padding: 10px 15px;
   border: 1px solid #2e7d32;
   background-color: #2e7d32;
@@ -56,7 +56,7 @@ form{
   cursor: pointer;
 }
 
-.login button:hover {
+.login-btn:hover {
   background-color: #1b5e20;
 }
 
