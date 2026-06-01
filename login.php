@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+ <h1>Manager Login</h1>
 <?php include 'header.inc'; ?>
 <?php
     session_start();
@@ -47,8 +47,7 @@
         }
     }
 ?>
-    <h1>HR Manager Login</h1>
-
+   
     <form action="login.php" method="post">
         <p>
             <label for="username">Username</label>
