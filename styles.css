@@ -526,7 +526,3 @@ caption {
     white-space: nowrap;
     border: 0;
 }
-
-body {
-    outline: 20px solid red !important;
-}
