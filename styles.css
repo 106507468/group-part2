@@ -48,12 +48,12 @@ form {
 }
 
 .login button {
-    padding: 10px 15px;
-    border: 1px solid #2e7d32;
-    background-color: #2e7d32;
-    color: white;
-    border-radius: 0 20px 20px 0;
-    cursor: pointer;
+  padding: 10px 15px;
+  border: 1px solid #2e7d32;
+  background-color: #2e7d32;
+  color: white;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
 }
 
 .login button:hover {
@@ -378,7 +378,7 @@ caption {
     line-height: 1.6;
 }
 
-/* Media queries for responsive layout */
+/* Media query to fit smaller screens and have responsive layout */
 @media screen and (max-width: 768px) {
     aside {
         float: none;
