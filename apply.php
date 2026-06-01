@@ -1,4 +1,4 @@
-<?php include 'header.inc'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,6 +14,7 @@
             }
         </style>
     </head>
+    <?php include 'header.inc'; ?>
     <body>
         <div id="page">
             <form method="POST" action="process_eoi.php" id="form-container" novalidate>
