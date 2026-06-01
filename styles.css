@@ -225,14 +225,14 @@ nav a:hover {
 .footer-links a {
     display: block;
     margin-bottom: 10px;
-    color: #0C4F29;
+    color: #000000;
 }
 
 .footer-copy {
     text-align: center;
     width: 100%;
     margin-top: 10px;
-    color: #0C4F29;
+    color: #000000;
 }
 
 /* Jobs page CSS */
