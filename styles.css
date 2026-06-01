@@ -420,10 +420,7 @@ caption {
     background-color: white;
     display: block;
 }
-.manage-form + h2, main h3 {
-    text-align: center;
-    color: #1F7815;
-}
+
 .dashboard {
   text-align: center;
   display: block;
